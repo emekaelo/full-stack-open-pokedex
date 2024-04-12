@@ -18,6 +18,8 @@ jobs:
         run: npm install
       - name: Check style
         run: npm run eslint
+      - name: Build
+        run: npm run build
       - name: Test
         run: npm run test
       - name: Install Playwright Browsers
@@ -30,6 +32,4 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      - name: Build
-        run: npm run build
 
