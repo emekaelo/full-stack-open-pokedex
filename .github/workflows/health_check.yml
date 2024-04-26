@@ -13,14 +13,14 @@ jobs:
         with:
           # Check the following URLs one by one sequentially
           url: https://full-stack-open-pokedex-raad.onrender.com/health
-      - uses: rjstone/discord-webhook-notify@v1.0.0
+      - uses: rjstone/discord-webhook-notify@v1.0.4
         if: failure()
         with:
           severity: error
           details: Health check Failed 😱!
           description: Check commit ${{ github.event.head_commit.url }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - uses: rjstone/discord-webhook-notify@v1.0.0
+      - uses: rjstone/discord-webhook-notify@v1.0.4
         if: success()
         with:
           severity: info
